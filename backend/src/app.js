@@ -11,10 +11,18 @@ import authRoutes from './routes/auth.js'
 import userRoutes from './routes/user.js'
 
 const app = express()
-app.use(cors({ 
-  origin: true, // Dynamically allow the origin that made the request
-  credentials: true 
-}))
+// app.use(cors({ 
+//   origin: true, // Dynamically allow the origin that made the request
+//   credentials: true 
+// }))
+
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
+
+
+
 app.use(express.json())
 app.use(morgan('dev'))
 
