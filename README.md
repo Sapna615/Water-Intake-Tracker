@@ -1,85 +1,62 @@
-# Water Intake Tracker
+<img width="1470" height="880" alt="Screenshot 2026-04-15 at 12 58 37 AM" src="https://github.com/user-attachments/assets/0acf708c-50f1-4b88-91ca-50cd3653cb45" /># 💧 Water Intake Tracker
 
-A full-stack app to track daily water intake with blogs, analytics, products, videos, and a mock AI chatbot.
+A modern, responsive web application designed to help users track daily water intake with an intuitive and visually engaging interface.
 
-## Folder Structure
-- `Watertracker/backend` — Node.js + Express + MongoDB API
-- `Watertracker/frontend` — React + Vite + Tailwind UI
-- `Watertracker/sample_data` — Example JSON datasets
+🚀 **Focus:** Frontend Development (React + Tailwind CSS)
+🎯 **Goal:** Deliver a clean, user-friendly experience with real-time updates and data visualization
 
-## Environment Variables
-- Backend (`backend/.env`):
-  - `PORT=5000`
-  - `MONGODB_URI=mongodb://localhost:27017/watertracker`
-  - `JWT_SECRET=<secure_random>`
-  - `CLIENT_URL=http://localhost:5173`
-- Frontend (`frontend/.env`):
-  - `VITE_API_URL=http://localhost:5000`
+---
 
-## API Documentation
-- Auth
-  - `POST /auth/register` — body `{ name,email,password,dailyGoal?,weight? }`
-  - `POST /auth/login` — body `{ email,password }` → returns `{ token,user }`
-- User
-  - `GET /user/profile` — Bearer token
-  - `PUT /user/profile` — Bearer token, body `{ name?, dailyGoal?, weight? }`
-- Water
-  - `POST /water/add` — Bearer token, body `{ amount }`
-  - `GET /water/today` — Bearer token
-  - `GET /water/history` — Bearer token → `{ daily: [{ date,total,entries[] }] }`
-  - `GET /water/stats` — Bearer token → `{ bestDay,worstDay,last30[],weeklyAvg[],achievements[],streak }`
-- Blog
-  - `POST /blog` — body `{ title,content,author? }`
-  - `GET /blogs` — list
-  - `GET /blog/:id` — single + comments
-  - `POST /blog/:id/comments` — body `{ author?,content }`
-- Contact
-  - `POST /contact` — body `{ name,email,message }` → stores + auto-reply
-- Chatbot (mock)
-  - `POST /chatbot/ask` — body `{ prompt,weight? }` → `{ answer }`
-  - `GET /chatbot/sample` — preloaded Q&A
+## 🌟 Features
 
-## Run Locally (Root)
-From the project root directory (`/Users/sapnarai/Documents/trae_projects/WaterIntake`), you can run:
-- `npm run install:all` — to install both backend and frontend dependencies
-- `npm run dev` — to start both backend and frontend concurrently
+* 📊 Interactive dashboard with real-time hydration tracking
+* 📈 Data visualization using charts (Recharts)
+* 🌙 Dark mode toggle for better user experience
+* 📱 Fully responsive design (mobile + desktop)
+* 🧩 Component-based architecture using React
+* 🤖 Mock AI chatbot interface
+* 📝 Blogs, videos, and product UI sections
 
-## Run Individually
-- Backend
-  - `cd Watertracker/backend`
-  - `cp .env.example .env` and edit values
-  - `npm install`
-  - `npm run dev`
-- Frontend
-  - `cd Watertracker/frontend`
-  - `cp .env.example .env`
-  - `npm install`
-  - `npm run dev` (opens `http://localhost:5173`)
+---
 
-## Docker (optional)
-- Backend
-  - `docker build -t watertracker-backend ./Watertracker/backend`
-  - `docker run -p 5000:5000 --env-file Watertracker/backend/.env watertracker-backend`
-- Frontend
-  - `docker build -t watertracker-frontend ./Watertracker/frontend`
-  - `docker run -p 5173:5173 watertracker-frontend`
+## 🛠️ Tech Stack
 
-## Deployment Guide
-- Render (Backend)
-  - Create new Web Service → Node, set `Start Command: node src/server.js`
-  - Add env: `MONGODB_URI`, `JWT_SECRET`, `CLIENT_URL`
-- Railway (Backend)
-  - Deploy from repo, install, set variables, `npm start`
-- Vercel (Frontend)
-  - Import project, set `VITE_API_URL` to hosted backend URL, build with Vite default.
+**Frontend:** React.js (Vite), Tailwind CSS, JavaScript
+**Backend:** Node.js, Express.js
+**Database:** MongoDB
 
-## Features
-- Responsive UI with Tailwind
-- Dark mode toggle, daily reminder popup
-- Intake logging, timeline, progress bar
-- Analytics with Recharts (line + bar)
-- Blogs with comments
-- Products grid with affiliate links
-- Videos page embeds
-- Mock AI chatbot
-- Achievements badges and streaks
+---
+
+## ⚙️ How to Run
+
+```bash
+npm run install:all
+npm run dev
+```
+
+Frontend runs on: http://localhost:5173
+
+---
+
+## 📁 Project Structure
+
+* frontend → React + Tailwind UI
+* backend → API (Node.js + Express)
+
+---
+
+## 🔗 Deployment
+
+Frontend: Vercel
+Backend: Render / Railway
+
+---
+
+## ✨ Key Highlights
+
+* Built reusable React components for scalability
+* Focused on UI/UX design and responsiveness
+* Implemented dynamic data rendering with API integration
+* Clean and maintainable project structure
+
+---
